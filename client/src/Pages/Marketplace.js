@@ -156,7 +156,7 @@ const Marketplace = () => {
   }
   async function handleClickOpen(company) {
     try {
-      const c = await axios.post("/getSelectedCompany", {email : company.email}, {withCredentials: true})
+      const c = await axios.post("/getSelectedCompany", { email: company.email }, { withCredentials: true })
       setcurrcompany(c.data);
       setOpen(true);
     } catch (error) {
@@ -215,6 +215,10 @@ const Marketplace = () => {
   };
   return (
     <div>
+
+      <a href="http://localhost:3008/" target="_blank">
+        Click to open Chat
+      </a>
       {/* <div>
       <h1>Products after Web Crawler</h1>
       <div className="card-container">
