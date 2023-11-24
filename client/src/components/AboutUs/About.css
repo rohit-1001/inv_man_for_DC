@@ -1,0 +1,33 @@
+.adwaitAbout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.adwaitContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img123 {
+    max-width: 50%;
+    height: auto;
+}
+
+.adwaitCol-2 {
+    max-width: 50%;
+}
+
+.adwaitLine {
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}

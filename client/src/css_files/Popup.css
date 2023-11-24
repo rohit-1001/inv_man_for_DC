@@ -1,0 +1,98 @@
+/* ViewProductsPopup.css */
+
+/* Container for the modal */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Adjust the z-index as needed */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  }
+  
+  /* Class to make the modal visible */
+  .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Class to hide the modal */
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* Style for the modal content */
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px; /* Adjust the maximum width as needed */
+    width: 100%;
+  }
+  
+  /* Style for the modal header */
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the close button */
+  .popup-header button {
+    /* background-color: transparent; */
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  /* Hover effect for the close button */
+  .popup-header button:hover {
+    color: #ff0000; 
+  }
+  
+  /* Style for the table inside the modal */
+  .popup-content table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table headers */
+  .popup-content th {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  /* Style for table cells */
+  .popup-content td {
+    text-align: center;
+    padding: 8px;
+  }
+  
+  /* Style for the close button at the bottom of the modal */
+  .popup-content button {
+    /* background-color: #ff0000;  */
+    /* color: #fff; */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    /* transition: background-color 0.2s ease-in-out; */
+  }
+  
+  /* Hover effect for the close button */
+  .popup-content button:hover {
+    /* background-color: #cc0000; */
+  }
+  

@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  server:
+    image: "server_image"
+    ports:
+      - "8000:8000"
+    networks:
+      - inventory
+
+
+  client:
+    image: "client_image"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+    networks:
+      - inventory
+
+
+networks:
+  inventory:
+    driver: bridge
+    
