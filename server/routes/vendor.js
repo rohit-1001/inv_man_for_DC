@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const Vendor = require("../models/Vendor");
 const Profile = require("../models/Profile");
+const Profile_Replica = require("../models/Profile_Replica");
 const ContactForm = require("../models/Contact");
 const Order = require("../models/Order");
 const bcrypt = require("bcryptjs");
@@ -34,7 +35,9 @@ router.post("/vendorregister", async (req, res) => {
     const ven = new Vendor({ name, email, phone, password, cpassword });
     await ven.save();
     const pro = new Profile({ name: name, email: email, phone: phone, Grole: role })
+    const pro1 = new Profile_Replica({ name: name, email: email, phone: phone, Grole: role })
     await pro.save()
+    await pro1.save()
     return res.status(200).json({ msg: "Vendor registered successfully" });
   } catch (error) {
     console.log(error);
@@ -899,6 +902,18 @@ router.put("/updateprofile", async (req, res) => {
     user.GSTNO = GSTNO;
     user.dob = dob;
     await Profile.replaceOne({ email: email }, user);
+    const user0 = await Profile_Replica.findOne({ email: email });
+    if (!user0) {
+      return res.status(400).send({ error: "User not found" });
+    }
+    user0.name = name;
+    user0.phone = phone;
+    user0.address = address;
+    user0.companyGenre = companyGenre;
+    user0.logo = logo;
+    user0.GSTNO = GSTNO;
+    user0.dob = dob;
+    await Profile_Replica.replaceOne({ email: email }, user0);
 
     let user1 = await Vendor.findOne({ email: email });
     if (!user1) {
